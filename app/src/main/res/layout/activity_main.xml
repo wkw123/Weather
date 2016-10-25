@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:orientation="vertical"
@@ -65,6 +65,207 @@
             android:background="@color/light_grey">
         </view>
 
+        <LinearLayout
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_now_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sun_mini"/>
+            <TextView
+                android:id="@+id/tv_now_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="晴"
+                android:textColor="@color/text_color"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_today_tmp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="22 13"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp"
+            android:textColor="@color/text_color"
+            android:layout_gravity="center_vertical"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+            <TextView
+                android:id="@+id/tv_now_tmp"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="20"
+                android:textSize="48sp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/wireframe_light"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/text_color"
+                    android:text="PM2.5"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_aqi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="288"/>
+                    <TextView
+                        android:id="@+id/quality"
+                        android:ems="5"
+                        android:gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="严重污染"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/wireframe_dark"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="@color/dark_grey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="@string/forecast"/>
+            <view
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/light_grey">
+            </view>
+            <LinearLayout
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_next_three"
+                    style="@style/TextViewStyle"
+                    android:text="上午7时"/>
+                <TextView
+                    android:id="@+id/tv_next_six"
+                    style="@style/TextViewStyle"
+                    android:text="上午7时"/>
+                <TextView
+                    android:id="@+id/tv_next_nine"
+                    style="@style/TextViewStyle"
+                    android:text="上午7时"/>
+                <TextView
+                    android:id="@+id/tv_next_twelve"
+                    style="@style/TextViewStyle"
+                    android:text="上午7时"/>
+                <TextView
+                    android:id="@+id/tv_next_fifteen"
+                    style="@style/TextViewStyle"
+                    android:text="上午7时"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/iv_next_three"
+                    style="@style/ViewStyle"
+                    android:src="@drawable/sun_mini"/>
+                <ImageView
+                    android:id="@+id/iv_next_six"
+                    style="@style/ViewStyle"
+                    android:src="@drawable/sun_mini"/>
+                <ImageView
+                    android:id="@+id/iv_next_nine"
+                    style="@style/ViewStyle"
+                    android:src="@drawable/sun_mini"/>
+                <ImageView
+                    android:id="@+id/iv_next_twelve"
+                    style="@style/ViewStyle"
+                    android:src="@drawable/sun_mini"/>
+                <ImageView
+                    android:id="@+id/iv_next_fifteen"
+                    style="@style/ViewStyle"
+                    android:src="@drawable/sun_mini"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_next_three_tmp"
+                    style="@style/TextViewStyle"
+                    android:text="20"/>
+                <TextView
+                    android:id="@+id/tv_next_six_tmp"
+                    style="@style/TextViewStyle"
+                    android:text="25"/>
+                <TextView
+                    android:id="@+id/tv_next_nine_tmp"
+                    style="@style/TextViewStyle"
+                    android:text="33"/>
+                <TextView
+                    android:id="@+id/tv_next_twelve_tmp"
+                    style="@style/TextViewStyle"
+                    android:text="19"/>
+                <TextView
+                    android:id="@+id/tv_next_fifteen_tmp"
+                    style="@style/TextViewStyle"
+                    android:text="27"/>
+            </LinearLayout>
+            <view
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/light_grey">
+            </view>
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/tv_next_six_tmp"
+                style="@style/TextViewStyle"
+                android:layout_weight="3"
+                android:gravity="left"
+                android:paddingLeft="16dp"
+                android:text="@string/today"/>
+            <ImageView
+                android:id="@+id/iv_next_six"
+                style="@style/ViewStyle"
+                android:layout_weight="4"
+                android:src="@drawable/sun_mini"/>
+            <TextView
+                android:id="@+id/tv_next_twelve_tmp"
+                style="@style/TextViewStyle"
+                android:layout_weight="4"
+                android:text="19"/>
+            <TextView
+                android:id="@+id/tv_next_fifteen_tmp"
+                style="@style/TextViewStyle"
+                android:layout_weight="4"
+                android:text="27"/>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

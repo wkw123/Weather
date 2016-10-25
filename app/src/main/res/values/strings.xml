@@ -2,5 +2,7 @@
     <string name="app_name">Weather</string>
     <string name="test">test</string>
     <string name="test_city">北京</string>
+    <string name="forecast">预报</string>
+    <string name="today">今天</string>
 
 </resources>
