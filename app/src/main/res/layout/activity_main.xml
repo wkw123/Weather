@@ -2,14 +2,17 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.wkw.weather.MainActivity">
-
-    <!--<com.example.wkw.swiperefresh.PullToRefreshScrollView
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <com.example.wkw.swiperefresh.PullToRefreshScrollView
         xmlns:ptr="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/pull_refre_scoview"
+        android:id="@+id/pull_refre_scoviews"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none"
@@ -19,34 +22,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/test"/>
-    </com.example.wkw.swiperefresh.PullToRefreshScrollView>-->
+    </com.example.wkw.swiperefresh.PullToRefreshScrollView>
 
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
         <RelativeLayout
             android:id="@+id/select_city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:id="@+id/tv_city"
-                android:text="@string/test_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_color"
-                android:layout_centerInParent="true"/>
+                android:layout_centerInParent="true"
+                android:text="@string/test_city"
+                android:textColor="@color/text_color" />
 
             <ImageView
                 android:id="@+id/ima_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/arrow_down"
-                android:layout_alignTop="@+id/tv_city"
                 android:layout_alignBottom="@+id/tv_city"
+                android:layout_alignTop="@+id/tv_city"
                 android:layout_toRightOf="@+id/tv_city"
-                android:padding="4dp"/>
+                android:padding="4dp"
+                android:src="@drawable/arrow_down" />
         </RelativeLayout>
 
         <TextView
@@ -55,217 +60,517 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"
+            android:text="14:00发布"
             android:textColor="@color/text_color"
-            android:textSize="12sp"
-            android:text="14:00发布"/>
+            android:textSize="12sp" />
 
-        <view
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="@color/light_grey">
-        </view>
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#ffffff"
+            />
 
         <LinearLayout
-            android:layout_marginTop="24dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp">
 
             <ImageView
                 android:id="@+id/iv_now_weather"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/sun_mini"/>
+                android:src="@drawable/sun_mini" />
+
             <TextView
                 android:id="@+id/tv_now_weather"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:text="晴"
-                android:textColor="@color/text_color"
-                android:layout_gravity="center_vertical"/>
+                android:textColor="@color/text_color" />
         </LinearLayout>
+
         <TextView
             android:id="@+id/tv_today_tmp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="22 13"
+            android:layout_gravity="center_vertical"
             android:layout_marginTop="4dp"
-            android:textSize="12sp"
+            android:text="22 13"
             android:textColor="@color/text_color"
-            android:layout_gravity="center_vertical"/>
+            android:textSize="12sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp">
+
             <TextView
                 android:id="@+id/tv_now_tmp"
                 android:layout_width="match_parent"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="20"
                 android:textSize="48sp"
                 android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/wireframe_light"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:textColor="@color/text_color"
-                    android:text="PM2.5"/>
+                    android:text="PM2.5"
+                    android:textColor="@color/text_color" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    >
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/tv_aqi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="288"/>
+                        android:text="288" />
+
                     <TextView
                         android:id="@+id/quality"
-                        android:ems="5"
-                        android:gravity="right"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="严重污染"/>
+                        android:ems="5"
+                        android:gravity="right"
+                        android:text="严重污染" />
                 </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/wireframe_dark"
             android:orientation="vertical">
+
             <TextView
-                android:textColor="@color/dark_grey"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
-                android:text="@string/forecast"/>
-            <view
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/light_grey">
-            </view>
+                android:text="@string/forecast"
+                android:textColor="@color/dark_grey" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"
+                />
+
             <LinearLayout
-                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
 
                 <TextView
                     android:id="@+id/tv_next_three"
                     style="@style/TextViewStyle"
-                    android:text="上午7时"/>
+                    android:text="上午7时" />
+
                 <TextView
                     android:id="@+id/tv_next_six"
                     style="@style/TextViewStyle"
-                    android:text="上午7时"/>
+                    android:text="上午7时" />
+
                 <TextView
                     android:id="@+id/tv_next_nine"
                     style="@style/TextViewStyle"
-                    android:text="上午7时"/>
+                    android:text="上午7时" />
+
                 <TextView
                     android:id="@+id/tv_next_twelve"
                     style="@style/TextViewStyle"
-                    android:text="上午7时"/>
+                    android:text="上午7时" />
+
                 <TextView
                     android:id="@+id/tv_next_fifteen"
                     style="@style/TextViewStyle"
-                    android:text="上午7时"/>
+                    android:text="上午7时" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <ImageView
                     android:id="@+id/iv_next_three"
                     style="@style/ViewStyle"
-                    android:src="@drawable/sun_mini"/>
+                    android:src="@drawable/sun_mini" />
+
                 <ImageView
                     android:id="@+id/iv_next_six"
                     style="@style/ViewStyle"
-                    android:src="@drawable/sun_mini"/>
+                    android:src="@drawable/sun_mini" />
+
                 <ImageView
                     android:id="@+id/iv_next_nine"
                     style="@style/ViewStyle"
-                    android:src="@drawable/sun_mini"/>
+                    android:src="@drawable/sun_mini" />
+
                 <ImageView
                     android:id="@+id/iv_next_twelve"
                     style="@style/ViewStyle"
-                    android:src="@drawable/sun_mini"/>
+                    android:src="@drawable/sun_mini" />
+
                 <ImageView
                     android:id="@+id/iv_next_fifteen"
                     style="@style/ViewStyle"
-                    android:src="@drawable/sun_mini"/>
+                    android:src="@drawable/sun_mini" />
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp">
 
                 <TextView
                     android:id="@+id/tv_next_three_tmp"
                     style="@style/TextViewStyle"
-                    android:text="20"/>
+                    android:text="20" />
+
                 <TextView
                     android:id="@+id/tv_next_six_tmp"
                     style="@style/TextViewStyle"
-                    android:text="25"/>
+                    android:text="25" />
+
                 <TextView
                     android:id="@+id/tv_next_nine_tmp"
                     style="@style/TextViewStyle"
-                    android:text="33"/>
+                    android:text="33" />
+
                 <TextView
                     android:id="@+id/tv_next_twelve_tmp"
                     style="@style/TextViewStyle"
-                    android:text="19"/>
+                    android:text="19" />
+
                 <TextView
                     android:id="@+id/tv_next_fifteen_tmp"
                     style="@style/TextViewStyle"
-                    android:text="27"/>
+                    android:text="27" />
             </LinearLayout>
-            <view
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/light_grey">
-            </view>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"
+                />
 
             <LinearLayout
-                android:gravity="center"
-                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center">
 
 
-            <TextView
-                android:id="@+id/tv_next_six_tmp"
-                style="@style/TextViewStyle"
-                android:layout_weight="3"
-                android:gravity="left"
-                android:paddingLeft="16dp"
-                android:text="@string/today"/>
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:layout_weight="3"
+                    android:gravity="left"
+                    android:paddingLeft="16dp"
+                    android:text="@string/today" />
+
+                <ImageView
+                    android:id="@+id/iv_today_weather"
+                    style="@style/ViewStyle"
+                    android:layout_weight="4"
+                    android:src="@drawable/sun_mini" />
+
+                <TextView
+                    android:id="@+id/tv_today_tmp_a"
+                    style="@style/TextViewStyle"
+                    android:layout_weight="4"
+                    android:text="19" />
+
+                <TextView
+                    android:id="@+id/tv_today_tmp_b"
+                    style="@style/TextViewStyle"
+                    android:layout_weight="4"
+                    android:text="27" />
+            </LinearLayout>
+
             <ImageView
-                android:id="@+id/iv_next_six"
-                style="@style/ViewStyle"
-                android:layout_weight="4"
-                android:src="@drawable/sun_mini"/>
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/iv_tomorrow"
+                    style="@style/TextViewStyle"
+                    android:layout_weight="3"
+                    android:gravity="left"
+                    android:paddingLeft="16dp"
+                    android:text="@string/tomorrow" />
+
+                <ImageView
+                    android:id="@+id/iv_tomorrow_weather"
+                    style="@style/ViewStyle"
+                    android:layout_weight="4"
+                    android:src="@drawable/sun_mini" />
+
+                <TextView
+                    android:id="@+id/iv_tomorrow_tmp_a"
+                    style="@style/TextViewStyle"
+                    android:layout_weight="4"
+                    android:text="19" />
+
+                <TextView
+                    android:id="@+id/iv_tomorrow_tmp_b"
+                    style="@style/TextViewStyle"
+                    android:layout_weight="4"
+                    android:text="27" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/tv_thirdday"
+                    style="@style/TextViewStyle"
+                    android:layout_weight="3"
+                    android:gravity="left"
+                    android:paddingLeft="16dp"
+                    android:text="@string/today" />
+
+                <ImageView
+                    android:id="@+id/tv_thirdday_weather"
+                    style="@style/ViewStyle"
+                    android:layout_weight="4"
+                    android:src="@drawable/sun_mini" />
+
+                <TextView
+                    android:id="@+id/tv_thirdday_weather_a"
+                    style="@style/TextViewStyle"
+                    android:layout_weight="4"
+                    android:text="19" />
+
+                <TextView
+                    android:id="@+id/tv_thirdday_weather_b"
+                    style="@style/TextViewStyle"
+                    android:layout_weight="4"
+                    android:text="27" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/tv_fourthday"
+                    style="@style/TextViewStyle"
+                    android:layout_weight="3"
+                    android:gravity="left"
+                    android:paddingLeft="16dp"
+                    android:text="@string/today" />
+
+                <ImageView
+                    android:id="@+id/tv_fourthday_weather"
+                    style="@style/ViewStyle"
+                    android:layout_weight="4"
+                    android:src="@drawable/sun_mini" />
+
+                <TextView
+                    android:id="@+id/tv_fourthday_weather_a"
+                    style="@style/TextViewStyle"
+                    android:layout_weight="4"
+                    android:text="19" />
+
+                <TextView
+                    android:id="@+id/tv_fourthday_weather_b"
+                    style="@style/TextViewStyle"
+                    android:layout_weight="4"
+                    android:text="27" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/wireframe_dark"
+            android:orientation="vertical">
+
             <TextView
-                android:id="@+id/tv_next_twelve_tmp"
-                style="@style/TextViewStyle"
-                android:layout_weight="4"
-                android:text="19"/>
-            <TextView
-                android:id="@+id/tv_next_fifteen_tmp"
-                style="@style/TextViewStyle"
-                android:layout_weight="4"
-                android:text="27"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="@string/detail"
+                android:textColor="@color/dark_grey" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:gravity="left"
+                    android:padding="16dp"
+                    android:text="@string/surfacetmp" />
+
+                <TextView
+                    android:id="@+id/tv_surtmp"
+                    style="@style/TextViewStyle"
+                    android:gravity="left"
+                    android:padding="16dp"
+                    android:text="16"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:gravity="left"
+                    android:padding="16dp"
+                    android:text="@string/humidity"
+                    android:id="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/tv_humidity"
+                    style="@style/TextViewStyle"
+                    android:gravity="left"
+                    android:padding="16dp"
+                    android:text="40%"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:gravity="left"
+                    android:padding="16dp"
+                    android:text="@string/wind"
+                    android:id="@+id/textView2" />
+
+                <TextView
+                    android:id="@+id/tv_wind"
+                    style="@style/TextViewStyle"
+                    android:gravity="left"
+                    android:padding="16dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:gravity="left"
+                    android:padding="16dp"
+                    android:text="@string/uv_index" />
+
+                <TextView
+                    android:id="@+id/tv_uv_index"
+                    style="@style/TextViewStyle"
+                    android:gravity="left"
+                    android:padding="16dp"
+                    android:text="@string/uv_index"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:gravity="left"
+                    android:padding="16dp"
+                    android:text="@string/dressing_index" />
+
+                <TextView
+                    android:id="@+id/tv_dressing_index"
+                    style="@style/TextViewStyle"
+                    android:gravity="left"
+                    android:padding="16dp" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
+    </LinearLayout>
 </ScrollView>

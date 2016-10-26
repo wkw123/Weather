@@ -16,11 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initView();
-    }
-
-    private void initView(){
-        mPullToRefreshScrollView = (PullToRefreshScrollView) findViewById(R.id.pull_refre_scoview);
+        mPullToRefreshScrollView = (PullToRefreshScrollView) findViewById(R.id.pull_refre_scoviews);
         mPullToRefreshScrollView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ScrollView>() {
             @Override
             public void onRefresh(PullToRefreshBase<ScrollView> refreshView) {
@@ -28,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         mScrollView = mPullToRefreshScrollView.getRefreshableView();
+    }
+
+    private void initView(){
+
     }
 
 }
